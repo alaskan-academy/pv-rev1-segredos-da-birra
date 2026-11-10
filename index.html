@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Segredos da Birra — Lumii</title>
+<meta name="description" content="Acalme a birra do seu filho em minutos, sem gritar, sem ameaça e sem culpa — com o Script dos 60 Segundos da Helena Costa.">
+<meta name="theme-color" content="#FFFBF3">
+
+<!-- ============================================================
+     TRACKING — cole aqui os scripts deste produto:
+     • Utmify: pixel
+     • Utmify: UTMs
+     • Microsoft Clarity
+     (mesmo padrão da LP Guia de Comportamento Rev4)
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --green:#71c69a;  --green-deep:#2f8a5c; --green-tint:#EAF7F0;
+  --yellow:#eebc3e; --yellow-tint:#FFF5D9;
+  --coral:#f6614f;  --coral-btn:#EE4F3C; --coral-deep:#C8402F; --coral-tint:#FFEDEA;
+  --navy:#212d42;   --ink:#212d42; --ink-soft:#4A5568; --ink-faint:#7A8496;
+  --cream:#FFFBF3;  --paper:#FFFFFF; --line:#EDE6D8;
+  --r-s:12px; --r-m:18px; --r-l:26px;
+  --shadow-s:0 2px 10px rgba(33,45,66,.06);
+  --shadow-m:0 12px 32px rgba(33,45,66,.10);
+  --grad:linear-gradient(90deg,#71c69a 0%,#a9c86f 38%,#eebc3e 62%,#f6614f 100%);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:"Poppins",system-ui,sans-serif;font-size:18px;line-height:1.65;padding-bottom:84px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+h1,h2,h3{margin:0 0 .5em;line-height:1.22;text-wrap:balance;color:var(--navy)}
+h1{font-size:clamp(29px,6.4vw,44px);font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(25px,5vw,34px);font-weight:800;letter-spacing:-.015em;text-align:center}
+h3{font-size:clamp(19px,3.6vw,22px);font-weight:700}
+p{margin:0 0 1em}
+ul{margin:0;padding:0;list-style:none}
+strong{font-weight:700;color:var(--navy)}
+.wrap{max-width:660px;margin:0 auto;padding:0 20px}
+.wrap-w{max-width:900px;margin:0 auto;padding:0 20px}
+section{padding:64px 0}
+.alt{background:var(--paper)}
+.center{text-align:center}
+.lead{font-size:clamp(18px,3.4vw,20px);color:var(--ink-soft)}
+.mark{background:linear-gradient(transparent 58%,#FBE3A0 58%);padding:0 2px}
+.grad-line{height:6px;background:var(--grad)}
+
+/* Eyebrow / pill */
+.pill{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:7px 16px;border-radius:100px;margin-bottom:16px}
+.pill.coral{background:var(--coral-tint);color:var(--coral-deep)}
+.pill.green{background:var(--green-tint);color:var(--green-deep)}
+.pill.yellow{background:var(--yellow-tint);color:#8A6410}
+
+/* Topbar */
+.topbar{background:var(--navy);color:#fff;text-align:center;font-size:14px;font-weight:500;padding:10px 16px;line-height:1.4}
+.topbar b{color:var(--yellow)}
+
+/* Header */
+header{padding:18px 0 0;text-align:center}
+.logo{display:inline-block;font-weight:800;font-size:30px;letter-spacing:-.03em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+
+/* Botão */
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:460px;margin:0 auto;background:var(--coral-btn);color:#fff;text-decoration:none;font-family:inherit;font-weight:700;font-size:18px;line-height:1.3;padding:20px 26px;border-radius:100px;box-shadow:0 10px 24px rgba(238,79,60,.32);transition:transform .15s,box-shadow .15s,background .15s;text-align:center}
+.btn:hover{transform:translateY(-2px);background:var(--coral-deep);box-shadow:0 14px 28px rgba(200,64,47,.36)}
+.btn .arr{font-size:22px;line-height:1}
+.under-btn{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;font-size:14px;color:var(--ink-faint);margin-top:14px}
+
+/* Hero */
+.hero{padding:28px 0 56px;text-align:center}
+.hero h1 .hl{color:var(--coral-deep)}
+.hero .lead{margin:18px auto 26px;max-width:560px}
+.video{position:relative;width:100%;max-width:420px;margin:0 auto 26px;aspect-ratio:9/16;border-radius:var(--r-l);overflow:hidden;background:var(--navy) url("Fotos/birra.png") center/cover;box-shadow:var(--shadow-m)}
+.video::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,45,66,.05),rgba(33,45,66,.55))}
+.video .play{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:var(--coral-btn);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px rgba(255,255,255,.25)}
+.video .play::before{content:"";margin-left:6px;border-left:24px solid #fff;border-top:15px solid transparent;border-bottom:15px solid transparent}
+.video .vlabel{position:absolute;z-index:2;left:0;right:0;bottom:18px;color:#fff;font-weight:600;font-size:15px}
+.trust{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:22px}
+.trust span{background:var(--paper);border:1px solid var(--line);border-radius:100px;padding:8px 14px;font-size:14px;font-weight:500;color:var(--ink-soft)}
+
+.byline{font-size:15px;color:var(--ink-faint);margin:16px 0 0}
+.hero-img{width:100%;max-width:560px;height:auto;margin:0 auto;border-radius:var(--r-l);box-shadow:var(--shadow-m)}
+.scene{width:100%;height:auto;border-radius:var(--r-l);box-shadow:var(--shadow-m);margin:22px 0 0}
+
+/* Lista de situações */
+.sits{display:grid;gap:12px;margin:28px 0}
+.sit{display:flex;gap:14px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:var(--r-m);padding:16px 18px;box-shadow:var(--shadow-s);font-size:17px}
+.sit .ic{flex:none;width:30px;height:30px;border-radius:50%;background:var(--coral-tint);color:var(--coral-deep);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;margin-top:1px}
+.callout{background:var(--navy);color:#fff;border-radius:var(--r-m);padding:22px 24px;text-align:center;font-weight:600;font-size:19px;line-height:1.5}
+.callout b{color:var(--yellow)}
+
+/* Tentativas */
+.tries{display:grid;gap:12px;margin:26px 0}
+.try{display:grid;grid-template-columns:1fr 1fr;border-radius:var(--r-m);overflow:hidden;border:1px solid var(--line);background:var(--paper);box-shadow:var(--shadow-s)}
+.try div{padding:14px 16px;font-size:16px;line-height:1.45}
+.try div:first-child{font-weight:600}
+.try div:last-child{background:var(--coral-tint);color:var(--coral-deep)}
+.try-head{display:grid;grid-template-columns:1fr 1fr;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);padding:0 16px}
+.big-quote{font-size:clamp(21px,4.4vw,26px);font-weight:700;line-height:1.35;text-align:center;margin:30px 0 10px;color:var(--navy)}
+
+/* Ilustração do cérebro */
+.brainviz{margin:22px auto 30px;max-width:520px;background:var(--cream);border:1px solid var(--line);border-radius:var(--r-l);padding:22px 16px 20px;box-shadow:var(--shadow-s)}
+.brainviz svg{display:block;width:100%;max-width:380px;height:auto;margin:0 auto}
+.bv-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.bv-card{border-radius:var(--r-m);padding:12px 10px;text-align:center;line-height:1.35}
+.bv-card b{display:block;font-size:15.5px;margin-bottom:3px}
+.bv-card span{font-size:13.5px;color:var(--ink-soft)}
+.bv-card.hot{background:var(--coral-tint)} .bv-card.hot b{color:var(--coral-deep)}
+.bv-card.build{background:var(--green-tint)} .bv-card.build b{color:var(--green-deep)}
+.bv-loan{margin-top:20px}
+.bv-loan-t{font-weight:700;font-size:16px;color:var(--navy);margin-bottom:12px}
+.bv-eq{display:flex;align-items:center;justify-content:center;gap:4px}
+.bv-chip{flex:1;min-width:0;border-radius:var(--r-m);padding:10px 4px;font-weight:700;font-size:13px;line-height:1.2;color:var(--navy);text-align:center}
+.bv-chip .e{display:block;font-size:24px;margin-bottom:4px}
+.bv-chip small{display:block;font-weight:500;font-size:11.5px;color:var(--ink-soft);margin-top:3px}
+.bv-chip.build{background:#FFF5D9}
+.bv-chip.loan{background:var(--green-tint);border:2px solid var(--green)}
+.bv-chip.calm{background:var(--paper);border:2px solid var(--green-deep)}
+.bv-eq .op{flex:none;font-weight:800;font-size:20px;color:var(--ink-faint)}
+.bv-loan-s{font-size:14.5px;color:var(--ink-soft);margin:14px 0 0;line-height:1.45}
+.bv-loan-s b{color:var(--green-deep)}
+
+/* Cérebro */
+.brain{display:grid;gap:14px;margin:26px 0}
+.brain-card{background:var(--paper);border-radius:var(--r-m);padding:20px 22px;border-left:6px solid var(--green);box-shadow:var(--shadow-s)}
+.brain-card.no{border-left-color:var(--coral)}
+.brain-card h3{margin-bottom:.3em}
+.brain-card p{margin:0;font-size:17px;color:var(--ink-soft)}
+
+/* Mecanismo */
+.mech{display:grid;gap:24px;margin:30px auto 0;max-width:660px}
+.realcard{margin:0;text-align:center}
+.realcard .halves{display:flex;flex-direction:column;align-items:center;gap:6px}
+.realcard img{width:100%;max-width:440px;height:auto;border-radius:var(--r-m);box-shadow:var(--shadow-m)}
+.realcard .arrow{font-size:26px;font-weight:800;color:var(--coral-deep);line-height:1}
+@media(min-width:760px){.realcard .halves{flex-direction:row;justify-content:center}.realcard img{max-width:300px}.realcard .arrow{transform:rotate(-90deg)}}
+.realcard figcaption{font-size:14px;color:var(--ink-faint);margin-top:10px}
+.steps{display:grid;gap:14px}
+.step{display:flex;gap:16px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:var(--r-m);padding:18px 20px;box-shadow:var(--shadow-s)}
+.step .n{flex:none;width:42px;height:42px;border-radius:50%;color:#fff;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center}
+.step:nth-child(1) .n{background:var(--green)}
+.step:nth-child(2) .n{background:var(--yellow)}
+.step:nth-child(3) .n{background:var(--coral)}
+.step h3{margin-bottom:.2em;font-size:19px}
+.step p{margin:0;font-size:16.5px;color:var(--ink-soft)}
+.com{margin-top:28px;background:var(--green-tint);border:1px solid #CDEBDB;border-radius:var(--r-m);padding:20px 22px;text-align:center;font-size:18px}
+.com b{color:var(--green-deep)}
+
+/* Urgência real */
+.fork{display:grid;gap:14px;margin:26px 0}
+@media(min-width:640px){.fork{grid-template-columns:1fr 1fr}}
+.path{border-radius:var(--r-m);padding:22px;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow-s)}
+.path h3{font-size:18px}
+.path.bad{border-top:6px solid var(--coral)}
+.path.good{border-top:6px solid var(--green)}
+.path li{position:relative;padding-left:22px;margin-bottom:8px;font-size:16.5px;line-height:1.5}
+.path li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;border-radius:50%}
+.path.bad li::before{background:var(--coral)}
+.path.good li::before{background:var(--green)}
+
+.deliv-box{max-width:460px;margin:30px auto 0;background:var(--cream);border:3px solid var(--green);border-radius:var(--r-l);padding:24px 20px 6px}
+.next-you{max-width:560px;margin:28px auto 0}
+/* Prints de depoimentos */
+.proofs{columns:1;column-gap:16px;max-width:440px;margin:26px auto 0}
+@media(min-width:760px){.proofs{columns:2;max-width:860px}}
+.proof{break-inside:avoid;margin:0 0 18px;background:var(--paper);border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden;box-shadow:var(--shadow-s)}
+.proof figcaption{padding:12px 14px 10px;font-weight:700;font-size:15.5px;color:var(--navy);line-height:1.35}
+.proof figcaption::before{content:"★★★★★";display:block;color:var(--yellow);letter-spacing:2px;font-size:13px;margin-bottom:2px}
+.proof img{width:100%;height:auto;display:block;border-top:1px solid var(--line)}
+
+/* Depoimentos */
+.testis{display:grid;gap:14px;margin-top:28px}
+@media(min-width:720px){.testis{grid-template-columns:1fr 1fr}}
+.testi{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-m);padding:20px;box-shadow:var(--shadow-s)}
+.testi .stars{color:var(--yellow);letter-spacing:2px;font-size:16px}
+.testi p{font-size:16.5px;margin:8px 0 12px}
+.testi .who{display:flex;gap:10px;align-items:center;font-size:14px;color:var(--ink-faint)}
+.testi .av{width:36px;height:36px;border-radius:50%;background:var(--green-tint);flex:none}
+.ph{border:2px dashed #E3D9C6;background:#FFFDF8}
+.ph-note{display:inline-block;font-size:12px;font-weight:700;color:var(--coral-deep);background:var(--coral-tint);padding:3px 9px;border-radius:6px;margin-bottom:6px}
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.photo-ph{aspect-ratio:1;border-radius:var(--r-s);display:flex;align-items:center;justify-content:center;text-align:center;font-size:12.5px;color:var(--ink-faint);padding:8px}
+
+/* Especialista */
+.expert{display:grid;gap:26px;align-items:center}
+@media(min-width:760px){.expert{grid-template-columns:280px 1fr}}
+.expert-photo{position:relative;max-width:300px;margin:0 auto}
+.expert-photo img{border-radius:var(--r-l);box-shadow:var(--shadow-m);width:100%;aspect-ratio:4/5;object-fit:cover}
+.expert-photo::before{content:"";position:absolute;inset:-10px 10px 10px -10px;border-radius:var(--r-l);background:var(--grad);z-index:-1;opacity:.85}
+.expert-photo{z-index:0}
+.creds{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+@media(min-width:760px){.creds{grid-template-columns:repeat(4,1fr)}}
+.cred{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-m);padding:16px 12px;text-align:center;box-shadow:var(--shadow-s)}
+.cred img{height:46px;width:auto;max-width:100%;object-fit:contain;margin:0 auto 10px}
+.cred b{display:block;font-size:13.5px;line-height:1.3}
+.cred span{display:block;font-size:12.5px;color:var(--ink-faint);line-height:1.35;margin-top:4px}
+.sig{font-weight:700;font-size:20px;margin-top:6px}
+
+/* Futuro */
+.future{display:grid;gap:12px;margin:26px 0}
+.fut{display:flex;gap:14px;align-items:flex-start;background:var(--paper);border-radius:var(--r-m);padding:16px 18px;border:1px solid var(--line);box-shadow:var(--shadow-s);font-size:17px}
+.fut .ic{flex:none;width:30px;height:30px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;margin-top:1px}
+
+/* Oferta */
+.offer-head{text-align:center;margin-bottom:28px}
+.product{background:var(--paper);border-radius:var(--r-l);box-shadow:var(--shadow-m);border:1px solid var(--line);overflow:hidden}
+.product-top{background:var(--navy);color:#fff;padding:22px 24px;text-align:center}
+.product-top .logo{font-size:22px}
+.product-top h3{color:#fff;font-size:26px;margin:.25em 0 0}
+.items{padding:8px 22px}
+.item{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}
+.item:last-child{border-bottom:none}
+.item .ic{flex:none;width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px}
+.item h4{margin:0 0 .15em;font-size:17.5px;line-height:1.35}
+.item p{margin:0;font-size:15.5px;color:var(--ink-soft);line-height:1.5}
+.item .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:6px;margin-bottom:6px}
+.bonus-title{text-align:center;margin:40px 0 6px}
+.bonus{background:var(--paper);border:2px solid var(--yellow);border-radius:var(--r-m);padding:20px;margin-top:14px;box-shadow:var(--shadow-s)}
+.bonus .obj{font-size:14.5px;font-style:italic;color:var(--ink-faint);margin-bottom:6px}
+.bonus h4{margin:0 0 .2em;font-size:18px}
+.bonus p{margin:0;font-size:16px;color:var(--ink-soft)}
+.bonus .tag{display:inline-block;background:var(--yellow);color:var(--navy);font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:6px;margin-bottom:10px}
+
+/* Números do curso */
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:0 0 8px}
+@media(min-width:640px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-m);padding:14px 10px;text-align:center;box-shadow:var(--shadow-s)}
+.stat b{display:block;font-size:28px;font-weight:800;color:var(--coral-deep);line-height:1.1}
+.stat span{display:block;font-size:13.5px;color:var(--ink-soft);line-height:1.35;margin-top:2px}
+
+/* Módulos + trilho de aulas */
+.mod{margin-top:38px}
+.mod-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.mod-num{flex:none;width:52px;height:52px;border-radius:16px;color:#fff;font-weight:800;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.mod-num small{font-size:9.5px;letter-spacing:.08em;font-weight:700;opacity:.9}
+.mod-num b{font-size:22px}
+.mod-head h3{margin:0;font-size:20px}
+.mod-head p{margin:2px 0 0;font-size:14.5px;color:var(--ink-soft);line-height:1.4}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:74%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 20px 12px;margin:0 -20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.rail::-webkit-scrollbar{display:none}
+@media(min-width:700px){.rail{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);grid-auto-columns:auto;overflow:visible;margin:0;padding:4px 0}}
+.swipe{font-size:13px;color:var(--ink-faint);margin:0;text-align:right}
+@media(min-width:700px){.swipe{display:none}}
+.lesson{scroll-snap-align:start;background:var(--paper);border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden;box-shadow:var(--shadow-s)}
+.lesson .thumb{position:relative;aspect-ratio:16/9;background:#EFE8DA}
+.lesson .thumb img{width:100%;height:100%;object-fit:cover}
+.lesson .pl{position:absolute;left:10px;bottom:10px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.18)}
+.lesson .pl::before{content:"";margin-left:3px;border-left:11px solid var(--coral-btn);border-top:7px solid transparent;border-bottom:7px solid transparent}
+.lesson .dur{position:absolute;right:8px;bottom:10px;background:rgba(33,45,66,.88);color:#fff;font-size:12px;font-weight:600;padding:3px 8px;border-radius:6px}
+.lesson .lt{padding:10px 13px 13px;font-size:15px;font-weight:600;line-height:1.35;color:var(--navy)}
+.lesson.star{border:2px solid var(--coral)}
+.lesson .flag{position:absolute;left:8px;top:8px;background:var(--coral-btn);color:#fff;font-size:11.5px;font-weight:700;padding:4px 9px;border-radius:100px}
+
+/* Materiais */
+.mats-title{text-align:center;margin:46px 0 6px}
+.mats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+@media(min-width:700px){.mats{grid-template-columns:repeat(3,1fr)}}
+.mat{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-m);padding:12px;box-shadow:var(--shadow-s);text-align:center}
+.mat .img{background:#F4EEE2;border-radius:12px;aspect-ratio:3/4;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:12px}
+.mat .img img{max-height:100%;max-width:100%;width:auto;height:auto;border-radius:4px;box-shadow:0 6px 16px rgba(33,45,66,.16)}
+.mat h4{font-size:15px;margin:10px 0 2px;line-height:1.3}
+.mat p{font-size:13px;color:var(--ink-soft);margin:0;line-height:1.4}
+.mat.wide{grid-column:1/-1}
+@media(max-width:699px){.mats .mat:last-child{grid-column:1/-1}.mats .mat:last-child .img{aspect-ratio:auto;height:300px}}
+.mat.wide .img{aspect-ratio:auto;padding:12px}
+.mat .img.dup{aspect-ratio:1/1;padding:8px}
+.mat .duo{position:relative;width:100%;height:100%}
+.mat .duo img{position:absolute;max-width:62%;max-height:88%}
+.mat .duo img:first-child{left:4%;top:8%;z-index:2;transform:rotate(-4deg)}
+.mat .duo img:last-child{right:4%;top:4%;transform:rotate(4deg)}
+.bonus{overflow:hidden}
+.bonus .bimg{margin:-20px -20px 16px;background:#FFF5D9;border-bottom:2px solid var(--yellow);padding:14px;display:flex;justify-content:center}
+.bonus .bimg img{max-height:260px;width:auto;max-width:100%;border-radius:8px;box-shadow:0 6px 16px rgba(33,45,66,.14)}
+
+/* Preço */
+.price-card{max-width:460px;margin:34px auto 0;background:var(--paper);border-radius:var(--r-l);box-shadow:var(--shadow-m);border:3px solid var(--green);text-align:center;overflow:hidden}
+.price-card .pc-top{background:var(--green-tint);padding:14px;font-weight:700;color:var(--green-deep);font-size:15px}
+.price-card .pc-body{padding:24px 22px 26px}
+.deliv-title{font-weight:800;font-size:19px;color:var(--navy);margin-bottom:12px}
+/* Mockup dos entregáveis */
+.mock{position:relative;width:100%;max-width:400px;aspect-ratio:1/0.82;margin:4px auto 22px}
+.mock::before{content:"";position:absolute;inset:10% 4% 2%;border-radius:50%;background:radial-gradient(closest-side,rgba(113,198,154,.28),transparent)}
+.mock img{position:absolute;display:block;box-shadow:0 10px 24px rgba(33,45,66,.22)}
+.mock .m-desafio{width:46%;right:0;top:0;border-radius:6px;transform:rotate(5deg)}
+.mock .m-tab{position:absolute;left:4%;top:8%;width:74%;aspect-ratio:16/10.6;background:#1d2433;border-radius:14px;padding:4.5%;box-shadow:0 16px 34px rgba(33,45,66,.28)}
+.mock .m-tab img{position:static;width:100%;height:100%;object-fit:cover;border-radius:4px;box-shadow:none}
+.mock .m-book{width:25%;left:0;bottom:2%;border-radius:3px 6px 6px 3px;transform:rotate(-6deg);z-index:3}
+.mock .m-pdf{width:22%;left:22%;bottom:0;border-radius:4px;transform:rotate(3deg);z-index:4}
+.mock .m-card{width:40%;left:41%;bottom:3%;border-radius:8px;transform:rotate(-3deg);z-index:5}
+.mock .m-phone{position:absolute;right:2%;bottom:4%;width:22%;aspect-ratio:9/18.5;background:#1d2433;border-radius:16px;padding:3.5% 1.6%;z-index:6;box-shadow:0 14px 30px rgba(33,45,66,.32)}
+.mock .m-phone img{position:static;width:100%;height:100%;object-fit:cover;object-position:22% 50%;border-radius:10px;box-shadow:none}
+.deliv{text-align:left;max-width:360px;margin:0 auto 22px;display:grid;gap:9px}
+.deliv li{position:relative;padding-left:30px;font-size:15.5px;line-height:1.4;color:var(--ink-soft)}
+.deliv li::before{content:"✓";position:absolute;left:0;top:0;width:21px;height:21px;border-radius:50%;background:var(--green);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.deliv li.bon::before{content:"🎁";background:var(--yellow-tint);font-size:11px}
+.deliv li b{color:var(--navy)}
+.compare{border-top:1px dashed var(--line);padding-top:18px;font-size:16px;color:var(--ink-soft);margin-bottom:18px;line-height:1.45}
+.compare .perday{display:block;font-size:18px}
+/* Bloco de preço: parcelamento SEMPRE primeiro e grande */
+.pricebox{margin:6px auto 22px;text-align:center;line-height:1}
+.pricebox .px{display:block;font-size:20px;font-weight:700;color:var(--ink-soft);margin-bottom:4px}
+.pricebox .px{color:var(--green-deep)}
+.pricebox .pv{display:inline-block;font-weight:800;font-size:clamp(60px,16vw,80px);color:var(--green-deep);letter-spacing:-.03em;white-space:nowrap;background:var(--green-tint);border:2px solid #BFE5CF;border-radius:22px;padding:8px 22px 10px;margin-top:2px}
+.pricebox .pv small{font-size:.4em;font-weight:700;vertical-align:.95em;margin-right:4px}
+.pricebox .pcash{display:block;margin-top:14px;font-size:19px;font-weight:600;color:var(--ink-soft);line-height:1.35}
+.pricebox .pcash b{color:var(--navy);font-weight:800;font-size:22px}
+.pricebox.mini .pv{font-size:clamp(48px,12vw,60px)}
+.closing .pricebox .px{color:var(--green)}
+.closing .pricebox .pcash{color:#D7DCE5}
+.closing .pricebox .pv{color:#fff;background:var(--green-deep);border-color:var(--green)}
+.closing .pricebox .pcash b{color:#fff}
+.perday{color:var(--green-deep);font-weight:700}
+.justify div.us span:last-child{color:var(--green-deep)}
+.secure{display:flex;justify-content:center;margin-top:16px}
+.secure img{max-width:260px;height:auto}
+.justify{display:grid;gap:10px;margin:26px auto 0;max-width:520px}
+.justify div{display:flex;justify-content:space-between;gap:12px;background:var(--paper);border:1px solid var(--line);border-radius:var(--r-s);padding:12px 16px;font-size:16px}
+.justify div span:last-child{font-weight:700;white-space:nowrap}
+.justify div.us{border:2px solid var(--green);background:var(--green-tint)}
+
+/* Garantia */
+.guarantee{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;background:var(--paper);border-radius:var(--r-l);padding:30px 24px;box-shadow:var(--shadow-m);max-width:560px;margin:0 auto}
+.seal{width:118px;height:118px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;padding:6px}
+.seal div{width:100%;height:100%;border-radius:50%;background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.seal b{font-size:40px;font-weight:800;color:var(--navy)}
+.seal span{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-top:3px}
+
+/* FAQ */
+.faq{margin-top:26px;background:var(--paper);border-radius:var(--r-m);border:1px solid var(--line);padding:0 20px;box-shadow:var(--shadow-s)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:last-child{border-bottom:none}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:18px 0;font-weight:600;font-size:17px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;background:var(--coral-tint);color:var(--coral-deep);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:600}
+.faq details[open] summary::after{content:"–"}
+.faq details p{font-size:16.5px;color:var(--ink-soft);padding-bottom:16px;margin:0}
+
+/* Fechamento */
+.closing{background:var(--navy);color:#fff;text-align:center}
+.closing h2{color:#fff}
+.closing p{color:#D7DCE5}
+.closing .ps{max-width:560px;margin:30px auto 0;text-align:center;font-size:16.5px;color:#D7DCE5;border-top:1px solid rgba(255,255,255,.15);padding-top:22px}
+.closing .ps b{color:var(--yellow)}
+
+/* Sticky */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--paper);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -6px 20px rgba(33,45,66,.10);transform:translateY(110%);transition:transform .3s}
+.sticky.show{transform:none}
+.sticky .btn{padding:15px 20px;font-size:16.5px}
+
+footer{padding:28px 20px 20px;text-align:center;font-size:12.5px;color:var(--ink-faint);line-height:1.6}
+footer p{max-width:620px;margin:0 auto 8px}
+
+/* ===== Centralização geral ===== */
+body,section,.wrap,.wrap-w{text-align:center}
+.sit,.fut,.step{flex-direction:column;align-items:center;text-align:center;gap:10px}
+.sit .ic,.fut .ic{margin-top:0}
+.try div,.try-head{text-align:center}
+.brain-card{border-left:none;border-top:6px solid var(--green);text-align:center}
+.brain-card.no{border-top-color:var(--coral)}
+.path{text-align:center}
+.path li{padding-left:0}
+.path li::before{position:static;display:inline-block;vertical-align:middle;margin:-3px 8px 0 0}
+.testi{text-align:center}
+.testi .who{justify-content:center}
+.expert-copy{text-align:center}
+.mod-head{flex-direction:column;text-align:center;gap:10px}
+.lesson .lt{text-align:center}
+.bonus,.bonus .obj{text-align:center}
+.faq summary{text-align:center}
+.faq summary::before{content:"";flex:none;width:30px}
+.faq details p{text-align:center}
+.swipe{text-align:center}
+
+@media(max-width:420px){
+  body{font-size:17px}
+  section{padding:52px 0}
+  .try div{font-size:15px;padding:12px 13px}
+}
+</style>
+</head>
+<body>
+
+<!-- ========== 0. TOPBAR ========== -->
+<div class="topbar">Para mães de crianças que fazem <b>birra, batem, mordem ou gritam</b></div>
+<div class="grad-line"></div>
+
+<header><span class="logo">Lumii</span></header>
+
+<!-- ========== 1. GRANDE PROMESSA ========== -->
+<section class="hero">
+  <div class="wrap">
+    <span class="pill coral">Para quem já tentou de tudo</span>
+    <h1>Seu filho se acalma em minutos.<br><span class="hl">Sem você gritar, ameaçar ou sentir culpa depois.</span></h1>
+    <p class="lead">Com o <strong>Script dos 60 Segundos</strong>: um chaveirinho que você e seu filho montam <strong>juntos</strong> e usam na hora da birra. Funciona até nos dias em que você já está sem paciência.</p>
+
+    <!-- Quando a VSL estiver pronta, troque esta imagem pelo embed do vturb -->
+    <img class="hero-img" src="Fotos/cena-depois-calma.webp" alt="Mãe ajoelhada no chão da sala, calma, mostrando ao filho o cartão do Chaveirinho das Emoções" width="1200" height="900" fetchpriority="high">
+
+
+    <p class="byline">Por <strong>Helena Costa</strong>, mestre em Educação Infantil</p>
+  </div>
+</section>
+
+<!-- ========== 2. RECONHECIMENTO ========== -->
+<section class="alt">
+  <div class="wrap">
+    <h2>Alguma dessas cenas parece com a sua casa?</h2>
+    <img class="scene" src="Fotos/cena-birra-casa.webp" alt="Criança fazendo birra no chão da sala enquanto a mãe, exausta, cobre o rosto no sofá" width="1200" height="900" loading="lazy">
+    <div class="sits">
+      <div class="sit"><span class="ic">!</span><span>Ele ouve um <strong>“não”</strong> e se joga no chão. No mercado. Com todo mundo olhando.</span></div>
+      <div class="sit"><span class="ic">!</span><span>Ele <strong>bate, morde ou chuta</strong> quando fica bravo. Às vezes, bate em você.</span></div>
+      <div class="sit"><span class="ic">!</span><span>Você conta até 10. Respira fundo. <strong>E explode mesmo assim.</strong></span></div>
+      <div class="sit"><span class="ic">!</span><span>À noite, com ele dormindo, vem a culpa: <strong>“por que eu gritei de novo?”</strong></span></div>
+      <div class="sit"><span class="ic">!</span><span>Alguém da família já soltou: <strong>“esse menino precisa é de limite”</strong>. E doeu.</span></div>
+    </div>
+    <div class="callout">Se você se viu em pelo menos uma, <b>essa página foi escrita pra você.</b></div>
+  </div>
+</section>
+
+<!-- ========== 3. "JÁ TENTEI DE TUDO" + 7. NÃO SOU UMA MÃE RUIM ========== -->
+<section>
+  <div class="wrap">
+    <h2>Você não é uma mãe ruim. Você só nunca recebeu a ferramenta certa.</h2>
+    <p class="lead center">Você já tentou muita coisa. E é bem provável que tenha sido assim:</p>
+
+    <div class="try-head"><span>O que te ensinaram</span><span>O que acontece</span></div>
+    <div class="tries">
+      <div class="try"><div>Contar até 10</div><div>Ele continua gritando</div></div>
+      <div class="try"><div>Ignorar a birra</div><div>Vira um escândalo maior</div></div>
+      <div class="try"><div>Colocar de castigo</div><div>Funciona hoje, volta amanhã</div></div>
+      <div class="try"><div>Conversar com calma</div><div>Ele nem escuta</div></div>
+      <div class="try"><div>Gritar mais alto</div><div>Ele para de medo. Você chora depois.</div></div>
+    </div>
+
+    <p>Não é falta de amor. Não é falta de esforço.</p>
+    <p>É que quase tudo que existe por aí explica <strong>por que</strong> a criança faz birra. Mas ninguém te diz <span class="mark"><strong>o que fazer nos 60 segundos em que ela está acontecendo.</strong></span></p>
+    <p class="big-quote">É exatamente nesse minuto que tudo se decide. E é pra esse minuto que existe o Script.</p>
+  </div>
+</section>
+
+<!-- ========== 8. SEGREDO / INSIGHT ========== -->
+<section class="alt">
+  <div class="wrap">
+    <h2>Birra não é manha. É um cérebro que ainda está aprendendo a frear.</h2>
+    <p>A parte do cérebro que freia a raiva <strong>ainda está em construção</strong>. Por isso, no meio da birra, ele não consegue te ouvir. Não é que ele não quer. <strong>Ele não consegue.</strong></p>
+
+    <figure class="brainviz" aria-label="Ilustração: no cérebro da criança, a emoção (acelerador) já funciona com força total, e o controle (freio) ainda está em construção">
+      <svg viewBox="0 0 360 262" xmlns="http://www.w3.org/2000/svg" role="img">
+        <defs>
+          <pattern id="obras" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <rect width="16" height="16" fill="#FFF5D9"/>
+            <rect width="7" height="16" fill="#eebc3e" opacity=".55"/>
+          </pattern>
+          <clipPath id="cerebro">
+            <circle cx="120" cy="150" r="48"/><circle cx="150" cy="110" r="44"/><circle cx="200" cy="102" r="46"/>
+            <circle cx="245" cy="130" r="44"/><circle cx="250" cy="175" r="38"/><circle cx="200" cy="180" r="48"/><circle cx="140" cy="185" r="40"/>
+          </clipPath>
+        </defs>
+
+        <!-- pills -->
+        <rect x="22" y="6" width="132" height="30" rx="15" fill="#FFEDEA"/>
+        <text x="88" y="26" text-anchor="middle" font-family="Poppins,sans-serif" font-size="13" font-weight="800" fill="#C8402F" letter-spacing=".5">ACELERADOR</text>
+        <rect x="216" y="6" width="122" height="30" rx="15" fill="#EAF7F0"/>
+        <text x="277" y="26" text-anchor="middle" font-family="Poppins,sans-serif" font-size="13" font-weight="800" fill="#2f8a5c" letter-spacing=".5">FREIO</text>
+        <path d="M88 38 C 92 60, 112 70, 122 88" fill="none" stroke="#C8402F" stroke-width="2.5" stroke-dasharray="4 4" stroke-linecap="round"/>
+        <path d="M277 38 C 276 62, 262 76, 250 92" fill="none" stroke="#2f8a5c" stroke-width="2.5" stroke-dasharray="4 4" stroke-linecap="round"/>
+
+        <!-- tronco -->
+        <rect x="160" y="206" width="30" height="40" rx="13" fill="#EFE6D6" stroke="#212d42" stroke-width="3" transform="rotate(-12 175 226)"/>
+
+        <!-- contorno -->
+        <g fill="#fff" stroke="#212d42" stroke-width="6">
+          <circle cx="120" cy="150" r="48"/><circle cx="150" cy="110" r="44"/><circle cx="200" cy="102" r="46"/>
+          <circle cx="245" cy="130" r="44"/><circle cx="250" cy="175" r="38"/><circle cx="200" cy="180" r="48"/><circle cx="140" cy="185" r="40"/>
+        </g>
+
+        <!-- preenchimentos -->
+        <g clip-path="url(#cerebro)">
+          <rect x="0" y="0" width="202" height="262" fill="#f6614f"/>
+          <rect x="202" y="0" width="160" height="262" fill="url(#obras)"/>
+          <!-- dobras -->
+          <g fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".55">
+            <path d="M92 140 q 14 -14 30 0 t 30 0"/>
+            <path d="M110 182 q 14 -12 28 0 t 28 0"/>
+            <path d="M128 106 q 12 -12 26 0"/>
+          </g>
+          <path d="M202 58 C 192 100, 214 130, 198 160 S 206 210, 202 232" fill="none" stroke="#fff" stroke-width="5" stroke-dasharray="7 6"/>
+        </g>
+
+        <!-- emoção: chamas -->
+        <text x="135" y="168" text-anchor="middle" font-size="40">🔥</text>
+        <!-- controle: obras -->
+        <text x="246" y="163" text-anchor="middle" font-size="34">🚧</text>
+      </svg>
+
+      <div class="bv-loan">
+        <div class="bv-loan-t">Enquanto o freio dele está em obras…</div>
+        <div class="bv-eq">
+          <div class="bv-chip build"><span class="e">🚧</span>Freio dele<small>em obras</small></div>
+          <span class="op">+</span>
+          <div class="bv-chip loan"><span class="e">🤝</span>Freio emprestado<small>você + o chaveirinho</small></div>
+          <span class="op">=</span>
+          <div class="bv-chip calm"><span class="e">😌</span>Calma<small>em minutos</small></div>
+        </div>
+        <p class="bv-loan-s">E cada vez que vocês usam o cartão juntos, <b>a obra avança</b>: o freio dele fica um pouco mais forte.</p>
+      </div>
+    </figure>
+    <p class="big-quote">Sermão não freia. O que freia é algo que ele consiga <span class="mark">ver e segurar</span>. Foi isso que a Helena colocou num chaveirinho.</p>
+  </div>
+</section>
+
+<!-- ========== MECANISMO: SCRIPT DOS 60 SEGUNDOS ========== -->
+<section>
+  <div class="wrap-w">
+    <h2>Um passo a passo pra hora da birra que cabe no bolso do seu filho</h2>
+    <p class="lead center" style="max-width:600px;margin:0 auto">Não é teoria. É um cartão de verdade, que vocês montam juntos e penduram na mochila.</p>
+
+    <div class="mech">
+      <figure class="realcard">
+        <div class="halves">
+          <img src="Fotos/material/card-raiva-a.webp" alt="Cartão: Quando eu sinto raiva…" width="700" height="331" loading="lazy">
+          <span class="arrow">↓</span>
+          <img src="Fotos/material/card-raiva-b.webp" alt="Eu posso tentar: bater no fantasminha da raiva" width="700" height="331" loading="lazy">
+        </div>
+        <figcaption>☝️ O cartão de verdade, do jeitinho que vem no material</figcaption>
+      </figure>
+      <div class="steps">
+        <div class="step"><span class="n">1</span><div><h3>Vocês montam juntos</h3><p>Num momento calmo, você e seu filho montam o Chaveirinho das Emoções. Ele escolhe, pinta, decora. <strong>Como ele ajudou a fazer, ele quer usar.</strong></p></div></div>
+        <div class="step"><span class="n">2</span><div><h3>Veio a birra? Pega o cartão</h3><p>Em vez de gritar mais alto, você só aponta para o cartão <strong>“Quando eu sinto raiva”</strong>. Sem sermão. Sem ameaça.</p></div></div>
+        <div class="step"><span class="n">3</span><div><h3>Em 60 segundos, a raiva tem pra onde ir</h3><p>O cartão mostra o que ele pode fazer <strong>no lugar</strong> de bater, morder ou gritar. Ele se acalma. E você continua calma também.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 4. URGÊNCIA REAL ========== -->
+<section class="alt">
+  <div class="wrap">
+    <h2>Por que vale resolver agora (e não “quando ele crescer”)</h2>
+    <p class="lead center">A forma como a birra é tratada hoje vira a forma como ele vai lidar com a raiva amanhã.</p>
+    <div class="fork">
+      <div class="path bad">
+        <h3>Se nada mudar…</h3>
+        <ul>
+          <li>Ele aprende que gritar é o jeito de ser ouvido</li>
+          <li>Aos 8, aos 12, a birra só muda de tamanho</li>
+          <li>Você vira a mãe que “só resolve no grito”</li>
+        </ul>
+      </div>
+      <div class="path good">
+        <h3>Se ele aprender agora…</h3>
+        <ul>
+          <li>Ele descobre que dá pra sentir raiva sem machucar ninguém</li>
+          <li>Ele leva esse jeito de se acalmar pra vida toda</li>
+          <li>Você vira a mãe que ele procura quando está mal</li>
+        </ul>
+      </div>
+    </div>
+    <p class="center"><strong>Quanto mais cedo, mais fácil.</strong> Mas nunca é tarde: o Segredos da Birra tem aulas para cada idade, dos 0 aos 18 anos.</p>
+  </div>
+</section>
+
+<!-- ========== 5. PROVA (DEPOIMENTOS) ========== -->
+<section>
+  <div class="wrap-w">
+    <h2>O que as mães estão contando</h2>
+    <p class="lead center">Mães de verdade, com filhos de verdade, birras de verdade.</p>
+
+    <div class="proofs">
+      <figure class="proof"><figcaption>“Ela para a birra na hora”</figcaption><img src="Fotos/depoimentos/birra-crise.webp" alt="Depoimento: amei o conteúdo e tem me ajudado muito nas birras; quando ela está em crise eu distraio com 2 opções novas e ela para a birra na hora" width="720" height="434" loading="lazy"></figure>
+      <figure class="proof"><figcaption>“O que fazer em cada idade”</figcaption><img src="Fotos/depoimentos/todas-idades.webp" alt="Depoimento: achei interessante que mostra a birra em todas as idades e o que fazer, como lidar" width="720" height="264" loading="lazy"></figure>
+      <figure class="proof"><figcaption>“Descobri que eu também podia mudar”</figcaption><img src="Fotos/depoimentos/empatica.webp" alt="Depoimento: me ajudou a ser mais empática com a fase do meu nenenzinho e descobri que tenho que trabalhar a maneira como reajo às frustrações" width="720" height="424" loading="lazy"></figure>
+      <figure class="proof"><figcaption>“O melhor investimento do ano”</figcaption><img src="Fotos/depoimentos/melhor-investimento.webp" alt="Depoimento: gostei muito do curso, adorei a didática leve e divertida, foi o melhor investimento desse ano" width="720" height="134" loading="lazy"></figure>
+    </div>
+    <p class="big-quote next-you">Elas estavam exatamente onde você está hoje.<br><span class="mark">A diferença é que decidiram tentar.</span></p>
+  </div>
+</section>
+
+<!-- ========== 2/6/9/13. AUTORIDADE + HISTÓRIA + RAZÃO ========== -->
+<section class="alt">
+  <div class="wrap-w">
+    <div class="expert">
+      <div class="expert-photo"><img src="Fotos/hena.webp" alt="Helena Costa" loading="lazy" width="300" height="375"></div>
+      <div>
+        <h2>Oi, eu sou a Helena. Mas pode me chamar de Hena.</h2>
+        <p>Sou mestre em Educação da Primeira Infância, com formação na Austrália, e há mais de 10 anos ajudo famílias e professoras a entender o comportamento das crianças.</p>
+        <p>E a pergunta que eu mais escuto não é “por que meu filho faz birra?”. É esta:</p>
+        <p class="big-quote" style="margin:10px 0 18px">“Hena, eu entendo a teoria. Mas o que eu faço <span class="mark">na hora?</span>”</p>
+        <p>Foi pra responder isso que eu criei o Script dos 60 Segundos. Algo simples, que qualquer mãe consegue usar — mesmo cansada, mesmo no mercado, mesmo no pior dia.</p>
+        <p><strong>Porque nenhuma mãe deveria ir dormir se sentindo um monstro por ter gritado com o filho.</strong></p>
+        <div class="sig">— Hena 💛</div>
+      </div>
+    </div>
+
+    <div class="creds">
+      <div class="cred"><img src="Fotos/Logos/logo-south-australia.jpg" alt="University of South Australia" loading="lazy"><b>University of South Australia</b><span>Mestrado em Educação Infantil</span></div>
+      <div class="cred"><img src="Fotos/Logos/logo-positive-discipline.png" alt="Positive Discipline Association" loading="lazy"><b>Positive Discipline Association</b><span>Educadora Parental Certificada</span></div>
+      <div class="cred"><img src="Fotos/Logos/logo-oxford.png" alt="University of Oxford" loading="lazy"><b>University of Oxford</b><span>Certificação em História do Cérebro</span></div>
+      <div class="cred"><img src="Fotos/Logos/logo-butterfly.png" alt="Butterfly Foundation" loading="lazy"><b>Butterfly Foundation</b><span>Imagem Corporal na Infância</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 14. ANTECIPAÇÃO DO FUTURO ========== -->
+<section>
+  <div class="wrap">
+    <h2>Imagine sua casa daqui a 2 semanas</h2>
+    <div class="future">
+      <div class="fut"><span class="ic">✓</span><span>Ele começa a ficar bravo… e <strong>vai sozinho</strong> buscar o chaveirinho.</span></div>
+      <div class="fut"><span class="ic">✓</span><span>Você passa por uma birra inteira <strong>sem levantar a voz</strong>.</span></div>
+      <div class="fut"><span class="ic">✓</span><span>No mercado, ele chora um pouco — e <strong>se acalma ali mesmo</strong>. Ninguém olha torto.</span></div>
+      <div class="fut"><span class="ic">✓</span><span>A mordida e o tapa <strong>dão lugar a palavras</strong>: “mamãe, eu tô com raiva”.</span></div>
+      <div class="fut"><span class="ic">✓</span><span>E à noite, em vez de culpa, você sente <strong>orgulho</strong>. De você e dele.</span></div>
+    </div>
+    <p class="center lead">Não é uma criança perfeita. É uma mãe que <strong>sabe o que fazer</strong>.</p>
+  </div>
+</section>
+
+<!-- ========== 16. OFERTA ========== -->
+<section class="alt" id="oferta">
+  <div class="wrap">
+    <div class="offer-head">
+      <h2>Segredos da Birra</h2>
+      <p class="lead">O passo a passo completo pra acalmar a birra e a agressividade do seu filho — na hora e de vez.</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>23</b><span>aulas em vídeo</span></div>
+      <div class="stat"><b>5</b><span>módulos</span></div>
+      <div class="stat"><b>~12 min</b><span>por aula, em média</span></div>
+      <div class="stat"><b>0–18</b><span>anos de idade</span></div>
+    </div>
+
+    <!-- Módulo 1 -->
+    <div class="mod">
+      <div class="mod-head"><span class="mod-num" style="background:var(--green)"><small>MÓDULO</small><b>1</b></span><div><h3>Entendendo a Birra</h3><p>Por que ela acontece e por que não é culpa sua.</p></div></div>
+      <div class="rail">
+        <div class="lesson"><div class="thumb"><img src="Fotos/aulas/aula-01.webp" alt="" loading="lazy" width="640" height="360"><span class="pl"></span><span class="dur">9 min</span></div><div class="lt">A birra, para o adulto</div></div>
+        <div class="lesson"><div class="thumb"><img src="Fotos/aulas/aula-02.webp" alt="" loading="lazy" width="640" height="360"><span class="pl"></span><span class="dur">8 min</span></div><div class="lt">O que, de fato, é a birra?</div></div>
+        <div class="lesson"><div class="thumb"><img src="Fotos/aulas/aula-03.webp" alt="" loading="lazy" width="640" height="360"><span class="pl"></span><span class="dur">10 min</span></div><div class="lt">O seu impacto permanente na vida do seu filho</div></div>
+        <div class="lesson"><div class="thumb"><img src="Fotos/aulas/aula-04.webp" alt="" loading="lazy" width="640" height="360"><span class="pl"></span><span class="dur">11 min</span></div><div class="lt">Acolher é mimar? (Spoiler: não é)</div></div>
+      </div>
+      <p class="swipe">Arraste para o lado →</p>
+    </div>
+
+    <!-- Módulo 2 -->
+    <div class="mod">
+      <div class="mod-head"><span class="mod-num" style="background:var(--yellow)"><small>MÓDULO</small><b>2</b></span><div><h3>Lidando com a Birra</h3><p>O que fazer, passo a passo, na hora da crise.</p></div></div>
+      <div class="rail">
+        <div class="lesson"><div class="thumb"><img src="Fotos/aulas/aula-05.webp" alt="" loading="lazy" width="640" height="360"><span class="pl"></span><span class="dur">5 min</span></div><div class="lt">A birra ensina seu filho a se acalmar</div></div>
+        <div class="lesson"><div class="thumb"><img src="Fotos/aulas/aula-06.webp" alt="" loading="lazy" width="640" height="360"><span class="pl"></span><span class="dur">13 min</span></div><div class="lt">A fórmula mágica da birra</div></div>
+        <div class="lesson"><div class="thumb"><img src="Fotos/aulas/aula-07.webp" alt="" loading="lazy" width="640" height="360"><span class="pl"></span><span class="dur">9 min</span></div><div class="lt">A fórmula mágica em todas as idades</div></div>
+      </div>
+      <p class="swipe">Arraste para o lado →</p>
+    </div>
+
+    <!-- Módulo 3 -->
+    <div class="mod">
+      <div class="mod-head"><span class="mod-num" style="background:var(--coral)"><small>MÓDULO</small><b>3</b></span><div><h3>Birra por Idade</h3><p>Vá direto na idade do seu filho.</p></div></div>
+      <div class="rail">
+        <div class="lesson"><div class="thumb"><img src="Fotos/aulas/aula-08.webp" alt="" loading="lazy" width="640" height="360"><span class="pl"></span><span class="dur">19 min</span></div><div class="lt">Bebês de 0 a 1 ano</div></div>
+        <div class="lesson"><div class="thumb"><img src="Fotos/aulas/aula-09.webp" alt="" loading="lazy" width="640" height="360"><span class="pl"></span><span class="dur">26 min</span></div><div class="lt">De 1 a 2 anos</div></div>
+        <div class="lesson"><div class="thumb"><img src="Fotos/aulas/aula-10.webp" alt="" loading="lazy" width="640" height="360"><span class="pl"></span><span class="dur">19 min</span></div><div class="lt">De 4 a 11 anos</div></div>
+        <div class="lesson"><div class="thumb"><img src="Fotos/aulas/aula-11.webp" alt="" loading="lazy" width="640" height="360"><span class="pl"></span><span class="dur">19 min</span></div><div class="lt">Adolescentes de 12 a 18 anos</div></div>
+        <div class="lesson"><div class="thumb"><img src="Fotos/aulas/aula-13.webp" alt="" loading="lazy" width="640" height="360"><span class="pl"></span><span class="dur">17 min</span></div><div class="lt">Crianças neuroatípicas</div></div>
+        <div class="lesson"><div class="thumb"><img src="Fotos/aulas/aula-12.webp" alt="" loading="lazy" width="640" height="360"><span class="pl"></span><span class="dur">17 min</span></div><div class="lt">E quando quem explode é o adulto?</div></div>
+      </div>
+      <p class="swipe">Arraste para o lado →</p>
+    </div>
+
+    <!-- Módulo 4 -->
+    <div class="mod">
+      <div class="mod-head"><span class="mod-num" style="background:var(--navy)"><small>MÓDULO</small><b>4</b></span><div><h3>Agressividade</h3><p>Quando ele morde, bate, grita ou xinga.</p></div></div>
+      <div class="rail">
+        <div class="lesson"><div class="thumb"><img src="Fotos/aulas/aula-20.webp" alt="" loading="lazy" width="640" height="360"><span class="pl"></span><span class="dur">10 min</span></div><div class="lt">A criança tá mordendo</div></div>
+        <div class="lesson"><div class="thumb"><img src="Fotos/aulas/aula-23.webp" alt="" loading="lazy" width="640" height="360"><span class="pl"></span><span class="dur">11 min</span></div><div class="lt">A criança tá batendo</div></div>
+        <div class="lesson"><div class="thumb"><img src="Fotos/aulas/aula-21.webp" alt="" loading="lazy" width="640" height="360"><span class="pl"></span><span class="dur">15 min</span></div><div class="lt">A criança tá gritando</div></div>
+        <div class="lesson"><div class="thumb"><img src="Fotos/aulas/aula-22.webp" alt="" loading="lazy" width="640" height="360"><span class="pl"></span><span class="dur">15 min</span></div><div class="lt">Xingamentos e ofensas</div></div>
+        <div class="lesson"><div class="thumb"><img src="Fotos/aulas/aula-19.webp" alt="" loading="lazy" width="640" height="360"><span class="pl"></span><span class="dur">6 min</span></div><div class="lt">“Mal comportamento”: o que tem por trás</div></div>
+        <div class="lesson"><div class="thumb"><img src="Fotos/aulas/aula-18.webp" alt="" loading="lazy" width="640" height="360"><span class="pl"></span><span class="dur">3 min</span></div><div class="lt">Agressividade não é violência</div></div>
+      </div>
+      <p class="swipe">Arraste para o lado →</p>
+    </div>
+
+    <!-- Módulo 5 -->
+    <div class="mod">
+      <div class="mod-head"><span class="mod-num" style="background:var(--green-deep)"><small>MÓDULO</small><b>5</b></span><div><h3>Pra fazer junto com seu filho</h3><p>Aulas pra assistir lado a lado com ele.</p></div></div>
+      <div class="rail">
+        <div class="lesson star"><div class="thumb"><img src="Fotos/aulas/aula-15.webp" alt="" loading="lazy" width="640" height="360"><span class="flag">⭐ Script dos 60 Segundos</span><span class="pl"></span><span class="dur">23 min</span></div><div class="lt">Montando o Chaveirinho das Emoções</div></div>
+        <div class="lesson"><div class="thumb"><img src="Fotos/aulas/aula-14.webp" alt="" loading="lazy" width="640" height="360"><span class="pl"></span><span class="dur">4 min</span></div><div class="lt">Respiração da Onda (assista com ele)</div></div>
+        <div class="lesson"><div class="thumb"><img src="Fotos/aulas/aula-16.webp" alt="" loading="lazy" width="640" height="360"><span class="pl"></span><span class="dur">2 min</span></div><div class="lt">Jornada do Aprendizado (assista com ele)</div></div>
+        <div class="lesson"><div class="thumb"><img src="Fotos/aulas/aula-17.webp" alt="" loading="lazy" width="640" height="360"><span class="pl"></span><span class="dur">14 min</span></div><div class="lt">Sua casa como “Área de Exploração”</div></div>
+      </div>
+      <p class="swipe">Arraste para o lado →</p>
+    </div>
+
+    <h3 class="bonus-title">🎁 E ainda, 3 bônus pra você não travar no caminho</h3>
+
+    <div class="bonus"><span class="tag">Bônus 1</span><div class="obj">Pra quando você pensar: “funciona hoje, mas amanhã ele volta a fazer birra”</div><h4>Desafio de 30 Dias</h4><p>Uma atividade simples por dia, pra fazerem juntos. Mais conexão, menos birra, e a calma vira hábito.</p></div>
+    <div class="bonus"><span class="tag">Bônus 2</span><div class="obj">Pra quando você pensar: “em casa até vai, mas na rua ele surta igual”</div><h4>Jogo do Cenário Social</h4><p>Vocês treinam o mercado, a festa e a escola <strong>brincando</strong>, antes de acontecer de verdade.</p></div>
+    <div class="bonus"><span class="tag">Bônus 3</span><div class="obj">Pra quando você pensar: “o problema é que eu também perco a paciência”</div><h4>Mantras e Afirmações Positivas</h4><p>Frases curtas pra você se acalmar primeiro. Porque mãe calma acalma o filho mais rápido.</p></div>
+
+
+    <div class="price-card">
+      <div class="pc-top">Acesso imediato · Pagamento único</div>
+      <div class="pc-body">
+        <div class="deliv-title">Você recebe hoje:</div>
+        <div class="mock" role="img" aria-label="Aulas no tablet e no celular, e-book, PDF e cartões do Chaveirinho das Emoções">
+          <img class="m-desafio" src="Fotos/material/desafio-30-dias.webp" alt="" loading="lazy">
+          <div class="m-tab"><img src="Fotos/aulas/aula-06.webp" alt="" loading="lazy"></div>
+          <img class="m-book" src="Fotos/material/manual-capa.webp" alt="" loading="lazy">
+          <img class="m-pdf" src="Fotos/material/agress-capa.webp" alt="" loading="lazy">
+          <img class="m-card" src="Fotos/material/card-raiva-b.webp" alt="" loading="lazy">
+          <div class="m-phone"><img src="Fotos/aulas/aula-05.webp" alt="" loading="lazy"></div>
+        </div>
+        <ul class="deliv">
+          <li><b>23 aulas em vídeo</b>, em 5 módulos</li>
+          <li><b>Script dos 60 Segundos</b>: o Chaveirinho das Emoções pra imprimir</li>
+          <li><b>Aulas de birra por idade</b>, de 0 a 18 anos (+ neuroatípicas)</li>
+          <li><b>Módulo Agressividade</b> + PDF “Lidando com a agressividade”</li>
+          <li><b>E-book Manual da Birra</b> + versão resumida</li>
+          <li><b>Lista de estratégias</b> + Jogo das Emoções</li>
+          <li class="bon"><b>Bônus 1:</b> Desafio de 30 Dias</li>
+          <li class="bon"><b>Bônus 2:</b> Jogo do Cenário Social</li>
+          <li class="bon"><b>Bônus 3:</b> Mantras e Afirmações Positivas</li>
+          <li><b>Acesso imediato</b> no seu e-mail</li>
+          <li><b>Acesso vitalício</b>: assista quantas vezes quiser</li>
+          <li><b>7 dias de garantia</b></li>
+        </ul>
+        <div class="compare">Tudo isso por <b class="perday">menos de R$ 0,20 por dia</b></div>
+        <div class="pricebox">
+          <span class="px">12x de</span>
+          <span class="pv"><small>R$</small>5,90</span>
+          <span class="pcash">no cartão de crédito<br>ou <b>R$ 57,00</b> à vista no Pix</span>
+        </div>
+        <a class="btn js-checkout" href="#">Quero o Segredos da Birra <span class="arr">→</span></a>
+        <div class="under-btn"><span>🔒 Compra segura</span><span>⚡ Acesso no seu e-mail</span></div>
+        <div class="secure"><img src="Fotos/selo-compra-segura.webp" alt="Compra segura" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 18. GARANTIA ========== -->
+<section>
+  <div class="wrap">
+    <div class="guarantee">
+      <div class="seal"><div><b>7</b><span>dias de garantia</span></div></div>
+      <h2 style="margin:6px 0 0">Testa com seu filho. Se não gostar, devolvemos tudo.</h2>
+      <p>Você tem 7 dias pra entrar, montar o chaveirinho e usar na próxima birra. Se achar que não é pra você, é só pedir. <strong>Você recebe 100% do seu dinheiro de volta</strong>, sem perguntas.</p>
+      <p style="margin:0 0 8px"><strong>O risco é todo nosso.</strong></p>
+      <a class="btn js-checkout" href="#">Quero testar por 7 dias <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ (objeções) ========== -->
+<section class="alt">
+  <div class="wrap">
+    <h2>Dúvidas comuns</h2>
+    <div class="faq">
+      <details><summary>Meu filho é muito difícil. Vai funcionar com ele?</summary><p>O método foi pensado justamente pra quem já tentou de tudo. As aulas são separadas por idade (0 a 18 anos) e incluem orientações para crianças neuroatípicas. E se não servir pra você, tem a garantia de 7 dias.</p></details>
+      <details><summary>Meu filho é pequeno (ou já é grande). Serve pra idade dele?</summary><p>Sim. Tem aulas específicas pra cada fase, do bebê ao adolescente. Você vai direto na idade do seu filho.</p></details>
+      <details><summary>Eu não tenho tempo. Quanto tempo leva?</summary><p>Montar o chaveirinho leva uma tarde de brincadeira. Usar na crise leva 60 segundos. As aulas são curtas e você assiste pelo celular, quando puder.</p></details>
+      <details><summary>Não sou boa com artesanato. Consigo montar?</summary><p>Consegue. Os cartões já vêm prontos pra imprimir. Você só recorta e monta junto com seu filho — e ele pode decorar do jeito dele.</p></details>
+      <details><summary>Ele morde e bate. Isso também é tratado?</summary><p>Sim. Tem um módulo inteiro só sobre agressividade, com o que fazer no exato momento em que ele morde, bate ou grita.</p></details>
+      <details><summary>Como eu recebo o acesso?</summary><p>Logo depois da compra, você recebe o acesso no seu e-mail. Dá pra assistir no celular, tablet ou computador.</p></details>
+      <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia. É só pedir e devolvemos 100% do valor.</p></details>
+    </div>
+    <div class="pricebox mini" style="margin-top:34px"><span class="px">12x de</span><span class="pv"><small>R$</small>5,90</span><span class="pcash">ou <b>R$ 57,00</b> à vista no Pix</span></div>
+    <a class="btn js-checkout" href="#">Quero o Segredos da Birra <span class="arr">→</span></a>
+    <div class="under-btn"><span>⚡ Acesso imediato</span><span>🔒 7 dias de garantia</span></div>
+  </div>
+</section>
+
+<!-- ========== 10/20/21. RESTAURAR PROMESSA + CTA FINAL ========== -->
+<section class="closing">
+  <div class="wrap">
+    <h2>A próxima birra vai acontecer. A pergunta é: você vai saber o que fazer?</h2>
+    <p class="lead" style="color:#D7DCE5">Monte o chaveirinho com seu filho ainda esta semana. E na próxima crise, em vez de gritar, você vai ter um plano de 60 segundos na mão.</p>
+    <div class="pricebox mini" style="margin-top:30px"><span class="px">12x de</span><span class="pv"><small>R$</small>5,90</span><span class="pcash">ou <b>R$ 57,00</b> à vista no Pix</span></div>
+    <a class="btn js-checkout" href="#">Sim, quero acalmar as birras do meu filho <span class="arr">→</span></a>
+    <div class="under-btn" style="color:#AEB6C4"><span>⚡ Acesso imediato</span><span>🔒 7 dias de garantia</span></div>
+    <div class="ps"><b>P.S.</b> Você não precisa ser uma mãe perfeita. Só precisa de uma ferramenta que funcione no pior minuto do dia. Por 12x de R$ 5,90 e com 7 dias pra testar, o único risco é continuar como está.</div>
+  </div>
+</section>
+
+<!-- ========== MAIS PROVA (após o fechamento) ========== -->
+<section class="alt">
+  <div class="wrap-w">
+    <h2>Ainda com dúvida? Veja o que mais famílias contaram</h2>
+    <div class="proofs">
+      <figure class="proof"><figcaption>“Ele fica muito irritado… seu material está ajudando”</figcaption><img src="Fotos/depoimentos/bebe-1ano.webp" alt="Depoimento: meu bebê faz 1 ano, fica muito irritado quando não consegue as coisas de imediato, seu material está ajudando bastante" width="720" height="266" loading="lazy"></figure>
+      <figure class="proof"><figcaption>“Vai ajudar minha irmã autista e toda a família”</figcaption><img src="Fotos/depoimentos/autista.webp" alt="Depoimento de irmão de uma menina autista: tenho certeza de que esse conteúdo vai ajudar a minha família a desenvolvermos as duas com mais amor e empatia" width="720" height="606" loading="lazy"></figure>
+      <figure class="proof"><figcaption>“Amo demais a dinâmica da Helena”</figcaption><img src="Fotos/depoimentos/dinamica.webp" alt="Depoimento: eu amei, amo demais a dinâmica da Helena, tudo muito perfeito e bem explicativo com ilustrações fofíssimas" width="720" height="420" loading="lazy"></figure>
+      <figure class="proof"><figcaption>“Entendi a birra das pessoinhas que tenho por perto”</figcaption><img src="Fotos/depoimentos/pessoinhas.webp" alt="Depoimento: gostei bastante, entendimento simples, foi ótimo compreender o comportamento e a birra das pessoinhas que tenho por perto" width="720" height="196" loading="lazy"></figure>
+      <figure class="proof"><figcaption>“Tudo muito bem explicado”</figcaption><img src="Fotos/depoimentos/maravilhoso.webp" alt="Depoimento: achei maravilhoso, tudo muito bem explicado e de forma interativa" width="720" height="174" loading="lazy"></figure>
+      <figure class="proof"><figcaption>“Ouro em pó”</figcaption><img src="Fotos/depoimentos/ouro.webp" alt="Depoimento: não dava pra parar, sensacional, ouro em pó" width="720" height="280" loading="lazy"></figure>
+    </div>
+    <div class="deliv-box">
+      <div class="deliv-title">Você recebe hoje:</div>
+      <ul class="deliv">
+        <li><b>23 aulas em vídeo</b>, em 5 módulos</li>
+        <li><b>Script dos 60 Segundos</b>: o Chaveirinho das Emoções pra imprimir</li>
+        <li><b>Aulas de birra por idade</b>, de 0 a 18 anos (+ neuroatípicas)</li>
+        <li><b>Módulo Agressividade</b> + PDF “Lidando com a agressividade”</li>
+        <li><b>E-book Manual da Birra</b> + versão resumida</li>
+        <li><b>Lista de estratégias</b> + Jogo das Emoções</li>
+        <li class="bon"><b>Bônus 1:</b> Desafio de 30 Dias</li>
+        <li class="bon"><b>Bônus 2:</b> Jogo do Cenário Social</li>
+        <li class="bon"><b>Bônus 3:</b> Mantras e Afirmações Positivas</li>
+        <li><b>Acesso imediato</b> no seu e-mail</li>
+        <li><b>Acesso vitalício</b>: assista quantas vezes quiser</li>
+        <li><b>7 dias de garantia</b></li>
+      </ul>
+    </div>
+    <div class="pricebox mini" style="margin-top:26px"><span class="px">12x de</span><span class="pv"><small>R$</small>5,90</span><span class="pcash">ou <b>R$ 57,00</b> à vista no Pix</span></div>
+    <a class="btn js-checkout" href="#">Quero o Segredos da Birra <span class="arr">→</span></a>
+    <div class="under-btn"><span>⚡ Acesso imediato</span><span>🔒 7 dias de garantia</span></div>
+  </div>
+</section>
+
+<footer>
+  <p><span class="logo" style="font-size:20px">Lumii</span></p>
+  <p>Cuidar de quem cuida da infância.</p>
+  <p>Este produto tem caráter educativo e não substitui acompanhamento médico ou psicológico. Os resultados podem variar de acordo com cada criança e família.</p>
+  <p>Ser Hena e Aeliss LTDA © 2026 — Todos os direitos reservados</p>
+</footer>
+
+<!-- Sticky CTA -->
+<div class="sticky" id="sticky"><a class="btn js-checkout" href="#">Quero agora · 12x de R$ 5,90</a></div>
+
+<script>
+/* ====== CONFIG: cole aqui o link do checkout (Payt) ====== */
+var CHECKOUT_URL = "https://checkout.payt.com.br/93ddf0c032375ea2fa4f0bbe4abdd545";
+
+(function(){
+  // Repassa UTMs/fbclid da URL para o checkout
+  var qs = window.location.search;
+  var url = CHECKOUT_URL;
+  if (qs && url.indexOf("http") === 0) url += (url.indexOf("?") > -1 ? "&" : "?") + qs.slice(1);
+  document.querySelectorAll(".js-checkout").forEach(function(a){ a.href = url; });
+
+  // Sticky só aparece DEPOIS do primeiro botão da oferta (antes disso não há CTA)
+  // e se esconde enquanto algum outro botão estiver visível na tela
+  var sticky = document.getElementById("sticky");
+  var firstCta = document.querySelector(".price-card .btn");
+  var btns = [].slice.call(document.querySelectorAll(".btn")).filter(function(b){ return !sticky.contains(b); });
+  function onScroll(){
+    var past = firstCta.getBoundingClientRect().bottom < 0;
+    var btnOnScreen = btns.some(function(b){ var r = b.getBoundingClientRect(); return r.top < window.innerHeight && r.bottom > 0; });
+    sticky.classList.toggle("show", past && !btnOnScreen);
+  }
+  window.addEventListener("scroll", onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+</body>
+</html>
